@@ -9,7 +9,7 @@ export const Content = styled.div`
     margin-top: 150px;
     
     h1{
-        color: #ff4791;
+        color: #000000;
         font-size: 30px;
         margin-bottom: 15px;
         font-family: 'Montserrat', sans-serif;
@@ -21,6 +21,7 @@ export const Content = styled.div`
         border: 1px solid #ff4791;;
         border-radius: 5px;
         margin-bottom: 5px;
+        color: #ff4791;
     }
     input:focus {
 		outline: none;
@@ -31,7 +32,7 @@ export const Content = styled.div`
 		font-weight: 400;
 		font-size: 15px;
 		line-height: 23px;
-		color: #000000;
+		color: #ff4791;
 	}
 
     button{
@@ -43,5 +44,28 @@ export const Content = styled.div`
         color:#ffffff;
         font-family: 'Montserrat';
         font-weight: bold;
+    }
+    
+    .sizes{
+        width: 405px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sizes input{
+        width: 180px;
+    }
+    
+    .sizes input::placeholder{
+        text-align: center;
+    }
+
+    h2{
+        width: 400px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        margin-bottom: 5px;
+        text-align: start;
     }
 `;
