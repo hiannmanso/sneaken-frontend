@@ -5,19 +5,20 @@ export default function ProductsForm(){
     const [brand, setBrand] = React.useState('');
     const [model, setModel] = React.useState('');
     const [image, setImage] = React.useState('');
-    const [size, setSize] = React.useState('');
-    const [amount, setAmount] = React.useState('');
+    const [size, setSize] = React.useState(0);
+    const [amount, setAmount] = React.useState(0);
     const [price, setPrice] = React.useState('');
     const [description, setDescription] = React.useState('');
-    console.log(size)
+    const [color, setColor] = React.useState('');
+    let regex = /(https?:\/\/.*\.(?:png|jpg|svg|jpeg))/i;
     function sendForm(){
-        if(brand !== '' && model !== '' && image !== '' && size !== '' && amount !== '' && price !== ''){
-            let sizes = `s${size}`;
+        if(brand !== '' && model !== '' && image !== '' && size !== '' && amount !== '' && price !== '' && regex.test(image) && color !== ''){
             let obj = {
                 brand: brand,
                 model: model,
                 price: price,
                 description: description,
+
                 amount:{
                     
                 }
@@ -34,8 +35,10 @@ export default function ProductsForm(){
             <input placeholder='Marca' value={brand} onChange={e => setBrand(e.target.value)}/>
             <h2>Adicione o modelo:</h2>
             <input placeholder='Modelo' value={model} onChange={e => setModel(e.target.value)}/>
+            <h2>Adicione a cor:</h2>
+            <input placeholder='Cor' value={color} onChange={e => setColor(e.target.value)}/>
             <h2>Adicione a descrição:</h2>
-            <input placeholder='Imagem' value={description} onChange={e => setDescription(e.target.value)}/>
+            <input placeholder='Descrição' value={description} onChange={e => setDescription(e.target.value)}/>
             <h2>Adicione a imagem:</h2>
             <input placeholder='Imagem' value={image} onChange={e => setImage(e.target.value)}/>
             <h2>Adicione o preço:</h2>

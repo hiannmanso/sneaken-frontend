@@ -7,7 +7,7 @@ export const Content = styled.div`
     justify-content: flex-start;
     align-items: center;
     margin-top: 150px;
-    
+    margin-bottom: 80px;
     h1{
         color: #000000;
         font-size: 30px;
