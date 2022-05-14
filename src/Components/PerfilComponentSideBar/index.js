@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import UserContext from '../../Context/UserContext';
 import axios from 'axios';
 
-export default function PerfilComponent() {
+export default function PerfilComponentSideBar() {
 	const { token } = useContext(UserContext);
 	const [name, setName] = useState('');
 

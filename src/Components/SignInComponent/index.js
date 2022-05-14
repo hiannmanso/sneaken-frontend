@@ -35,7 +35,7 @@ export default function SignInComponent() {
 	}
 	return (
 		<s.SignInContainer display={displaySignIN}>
-			<s.Opacity />
+			<s.Opacity onClick={() => setDisplaySignIN('none')} />
 
 			<s.SignInModal>
 				<s.Logo classname="logo" src={logosimples} alt="logo" />

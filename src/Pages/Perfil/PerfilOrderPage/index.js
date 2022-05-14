@@ -1,5 +1,5 @@
 import Header from '../../../Components/Header';
-import PerfilComponent from '../../../Components/PerfilComponent';
+import PerfilComponentSideBar from '../../../Components/PerfilComponentSideBar';
 import PerfilOrders from '../../../Components/PerfilOrders';
 import * as s from './style';
 export default function PerfilOrderPage() {
@@ -7,7 +7,7 @@ export default function PerfilOrderPage() {
 		<s.PerfilUser>
 			<Header />
 			<main>
-				<PerfilComponent />
+				<PerfilComponentSideBar />
 				<PerfilOrders />
 			</main>
 		</s.PerfilUser>

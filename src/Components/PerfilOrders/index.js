@@ -1,13 +1,32 @@
 import * as s from './style';
-import { useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
+import UserContext from '../../Context/UserContext';
+import axios from 'axios';
 
 export default function PerfilOrders() {
+	const { token } = useContext(UserContext);
+	useEffect(() => {
+		axios({
+			method: 'get',
+			url: 'http://localhost:5000/sign_in',
+			headers: {
+				authorization: `Bearer ${token}`,
+			},
+		})
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
 	return (
 		<>
 			<s.PerfilOrdersComponent>
 				<h1>Pedidos</h1>
 
 				<div className="orders">
+					{/* map dos pedidos */}
 					<div className="order">
 						<header>
 							<div>
@@ -22,7 +41,6 @@ export default function PerfilOrders() {
 								<p>#ID</p>
 							</div>
 						</header>
-						{/* map dos pedidos */}
 						<div className="itensOrder">
 							<img
 								src="https://aventurasnahistoria.uol.com.br/media/_versions/musica/xxtentacion_3_widelg.jpg"

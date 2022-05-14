@@ -35,7 +35,7 @@ export default function SignUpComponent() {
 	}
 	return (
 		<s.SignUpContainer display={displaySignUp}>
-			<s.Opacity />
+			<s.Opacity onClick={() => setDisplaySignUp('none')} />
 			<s.SignUpModal>
 				<Link to="/">
 					<s.Logo classname="logo" src={logosimples} alt="logo" />

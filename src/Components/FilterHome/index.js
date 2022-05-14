@@ -3,7 +3,7 @@ import * as s from './style';
 import { useState, useContext } from 'react';
 import UserContext from '../../Context/UserContext';
 
-export default function SideBar() {
+export default function FilterHome() {
 	const { allSneakers, setAllSneakers } = useContext(UserContext);
 	const [marca, setMarca] = useState(false);
 	const [inputMarca, setInputMarca] = useState('');
@@ -20,6 +20,7 @@ export default function SideBar() {
 	function filterSneakers() {
 		console.log('teste');
 		console.log(allSneakers);
+		setAllSneakers();
 	}
 	return (
 		<s.SideBar>

@@ -24,7 +24,7 @@ export const SignInModal = styled.div`
 	height: 500px;
 	border-radius: 10px;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	position: absolute;
+	position: fixed;
 	top: 10%;
 	left: 25%;
 	z-index: 10;
@@ -117,7 +117,7 @@ export const Logo = styled.img`
 	margin-bottom: 24px;
 `;
 export const Opacity = styled.div`
-	position: absolute;
+	position: fixed;
 	z-index: 9;
 	width: 100%;
 	height: 100%;

@@ -6,13 +6,14 @@ import UserContext from '../Context/UserContext';
 import PerfilUser from '../Pages/Perfil/PerfilUser';
 import PerfilOrderPage from '../Pages/Perfil/PerfilOrderPage';
 import Market from '../Pages/Market';
+import AddProducts from '../Pages/AddProducts';
 export default function App() {
 	const [displaySignIN, setDisplaySignIN] = useState('none');
 	const [displaySignUp, setDisplaySignUp] = useState('none');
 	const [token, setToken] = useState('');
 	const [allSneakers, setAllSneakers] = useState('');
 	const [displayMarket, setDisplayMarket] = useState('none');
-
+	const [userInfos, setUserInfos] = useState('');
 	return (
 		<BrowserRouter>
 			<UserContext.Provider
@@ -27,13 +28,14 @@ export default function App() {
 					setAllSneakers,
 					displayMarket,
 					setDisplayMarket,
+					userInfos,
+					setUserInfos,
 				}}
 			>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/sign-in" element={<SignIn />} />
-					<Route path="/sign-up" element={<SignUp />} />
-					<Route path='/add-products' element={<AddProducts />} />
+
+					<Route path="/add-products" element={<AddProducts />} />
 					<Route path="/filter?" element={<Home />} />
 					<Route path="/perfil/userData" element={<PerfilUser />} />
 					<Route path="/market" element={<Market />} />

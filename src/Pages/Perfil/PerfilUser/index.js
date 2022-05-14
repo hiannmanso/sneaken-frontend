@@ -1,5 +1,5 @@
 import Header from '../../../Components/Header';
-import PerfilComponent from '../../../Components/PerfilComponent';
+import PerfilComponentSideBar from '../../../Components/PerfilComponentSideBar';
 import PerfilUserData from '../../../Components/PerfilUserData';
 
 import * as s from './style';
@@ -8,7 +8,7 @@ export default function PerfilUser() {
 		<s.PerfilUser>
 			<Header />
 			<main>
-				<PerfilComponent />
+				<PerfilComponentSideBar />
 				<PerfilUserData />
 			</main>
 		</s.PerfilUser>

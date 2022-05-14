@@ -5,19 +5,8 @@ import SignUpComponent from '../SignUpComponent';
 
 import { useState, useContext, useEffect } from 'react';
 import UserContext from '../../Context/UserContext';
-export default function HomeComponent() {
-	const {
-		allSneakers,
-		setAllSneakers,
-		inputCor,
-		inputMarca,
-		inputTamanho,
-		inputValor,
-		setInputCor,
-		setInputMarca,
-		setInputTamanho,
-		setInputValor,
-	} = useContext(UserContext);
+export default function SneakersComponent() {
+	const { allSneakers, setAllSneakers } = useContext(UserContext);
 
 	useEffect(() => {
 		axios({

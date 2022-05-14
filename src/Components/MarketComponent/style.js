@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const MarketContainer = styled.div`
-	display: ${(props) => props.display};
-`;
-export const MarketComp = styled.div`
 	position: fixed;
 	top: 100px;
 	right: 50px;
 	z-index: 10;
+	display: ${(props) => props.display};
+`;
+export const MarketComp = styled.div`
 	width: 170px;
 	margin: 6px;
 	display: flex;
