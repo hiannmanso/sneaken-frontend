@@ -44,6 +44,7 @@ export const Content = styled.div`
         color:#ffffff;
         font-family: 'Montserrat';
         font-weight: bold;
+        margin-top: 5px;
     }
     
     .sizes{

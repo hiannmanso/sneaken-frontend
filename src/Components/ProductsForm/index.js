@@ -5,23 +5,31 @@ export default function ProductsForm(){
     const [brand, setBrand] = React.useState('');
     const [model, setModel] = React.useState('');
     const [image, setImage] = React.useState('');
-    const [size, setSize] = React.useState(0);
-    const [amount, setAmount] = React.useState(0);
+    const [size, setSize] = React.useState();
+    const [amount, setAmount] = React.useState();
     const [price, setPrice] = React.useState('');
     const [description, setDescription] = React.useState('');
     const [color, setColor] = React.useState('');
-    let regex = /(https?:\/\/.*\.(?:png|jpg|svg|jpeg))/i;
+    let imageRegex = /(https?:\/\/.*\.(?:png|jpg|svg|jpeg))/i;
+    let priceRegex = /^(\d+\,\d{2})/g;
     function sendForm(){
-        if(brand !== '' && model !== '' && image !== '' && size !== '' && amount !== '' && price !== '' && regex.test(image) && color !== ''){
+        if(brand !== '' && model !== '' && image !== '' && size !== '' && amount !== '' && price !== '' && imageRegex.test(image) && color !== '' && description !== '' && priceRegex.test(price)){
+            let items = [];
+            for(let i=0;i<amount;i++){
+                items.push({
+                    brand: brand,
+                    model: model,
+                    size: size
+                });
+            }
             let obj = {
                 brand: brand,
                 model: model,
                 price: price,
                 description: description,
-
-                amount:{
-                    
-                }
+                color: color,
+                image: image,
+                amount: items
             };
             console.log(obj);
         } else {
@@ -41,7 +49,7 @@ export default function ProductsForm(){
             <input placeholder='Descrição' value={description} onChange={e => setDescription(e.target.value)}/>
             <h2>Adicione a imagem:</h2>
             <input placeholder='Imagem' value={image} onChange={e => setImage(e.target.value)}/>
-            <h2>Adicione o preço:</h2>
+            <h2>Adicione o preço (Ex: 100,00):</h2>
             <input placeholder='Preço' value={price} onChange={e => setPrice(e.target.value)}/>
             <h2>Adicione o tamanho e quantidade:</h2>
             <div class="sizes">
