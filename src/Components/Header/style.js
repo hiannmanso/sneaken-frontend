@@ -24,6 +24,7 @@ export const Header = styled.header`
 		flex-direction: row;
 		align-items: center;
 		ion-icon {
+			cursor: pointer;
 			font-size: 22px;
 			margin-left: 20px;
 			color: #ff4791;
