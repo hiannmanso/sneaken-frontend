@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { useState, useContext } from 'react';
-import userContext from '../../Context/userContext';
+import UserContext from '../../Context/UserContext';
 import logosimples from './../../Assets/logosimples.png';
 
 export default function SignUpComponent() {
+	const { displaySignUp, setDisplaySignUp, setDisplaySignIN } =
+		useContext(UserContext);
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
-	const [displaySignUp, setDisplaySignUp] = useState('flex');
 
 	function createNewAccount(e) {
 		e.preventDefault();
@@ -33,38 +34,58 @@ export default function SignUpComponent() {
 			});
 	}
 	return (
-		<s.SignUpContainer displaySignUp={displaySignUp}>
-			<Link to="/">
-				<s.Logo classname="logo" src={logosimples} alt="logo" />
-			</Link>
-			<form onSubmit={createNewAccount}>
-				<input
-					type="text"
-					placeholder="Nome"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
-				/>
-				<input
-					type="email"
-					placeholder="E-mail"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-				/>
-				<input
-					type="password"
-					placeholder="Senha"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-				/>
-				<input
-					type="password"
-					placeholder="Confirme a senha"
-					value={confirmPassword}
-					onChange={(e) => setConfirmPassword(e.target.value)}
-				/>
-				<input className="submit" type="submit" value="Criar Conta" />
-			</form>
-			<Link to="/sign-in">Já tem uma conta? Entre agora!</Link>
+		<s.SignUpContainer display={displaySignUp}>
+			<s.Opacity />
+			<s.SignUpModal>
+				<Link to="/">
+					<s.Logo classname="logo" src={logosimples} alt="logo" />
+				</Link>
+				<form onSubmit={createNewAccount}>
+					<input
+						type="text"
+						placeholder="Nome"
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+					/>
+					<input
+						type="email"
+						placeholder="E-mail"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+					<input
+						type="password"
+						placeholder="Senha"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+					<input
+						type="password"
+						placeholder="Confirme a senha"
+						value={confirmPassword}
+						onChange={(e) => setConfirmPassword(e.target.value)}
+					/>
+					<input
+						className="submit"
+						type="submit"
+						value="Criar conta"
+					/>
+				</form>
+				<h1
+					onClick={() => {
+						setDisplaySignUp('none');
+						setDisplaySignIN('inherit');
+					}}
+				>
+					Já tem uma conta? Entre agora!
+				</h1>
+				<div className="exit">
+					<ion-icon
+						name="close-outline"
+						onClick={() => setDisplaySignUp('none')}
+					></ion-icon>
+				</div>
+			</s.SignUpModal>
 		</s.SignUpContainer>
 	);
 }

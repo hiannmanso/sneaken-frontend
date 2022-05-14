@@ -17,6 +17,7 @@ export const HomeComponent = styled.div`
 		margin: 10px;
 		font-family: 'Montserrat', sans-serif;
 		width: 320px;
+		position: relative;
 		padding: 5px;
 		img {
 			width: 100%;
@@ -30,6 +31,15 @@ export const HomeComponent = styled.div`
 		h2 {
 			color: #ff4791;
 			font-weight: 600;
+		}
+		ion-icon {
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			font-size: 20px;
+		}
+		ion-icon:hover {
+			cursor: pointer;
 		}
 	}
 	.sneaker:hover {
