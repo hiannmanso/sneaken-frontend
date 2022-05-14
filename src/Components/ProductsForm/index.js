@@ -1,5 +1,7 @@
 import * as S from './styles';
 import React from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProductsForm(){
     const [brand, setBrand] = React.useState('');
@@ -10,6 +12,7 @@ export default function ProductsForm(){
     const [price, setPrice] = React.useState('');
     const [description, setDescription] = React.useState('');
     const [color, setColor] = React.useState('');
+    const navigate = useNavigate(); 
     let imageRegex = /(https?:\/\/.*\.(?:png|jpg|svg|jpeg))/i;
     let priceRegex = /^(\d+\,\d{2})/g;
     function sendForm(){
@@ -31,7 +34,12 @@ export default function ProductsForm(){
                 image: image,
                 amount: items
             };
-            console.log(obj);
+            let config ={
+                headers:{"Authorization":"f5d61834-921a-441d-942b-11684fecf219"}
+            }
+            let promisse = axios.post('http://localhost:5000/products', obj, config);
+            promisse.then(() => navigate('/'));
+            promisse.catch(() => alert('Houve um erro no envio das informações. Tente novamente mais tarde'));
         } else {
             alert("Preencha corretamente todos os campos");
         }
