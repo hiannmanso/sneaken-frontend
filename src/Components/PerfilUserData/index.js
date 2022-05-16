@@ -1,6 +1,6 @@
 import * as s from './style';
 import { useContext, useState, useEffect } from 'react';
-import UserContext from '../../Context/UserContext';
+import UserContext from '../../Context/userContext';
 import axios from 'axios';
 
 export default function PerfilUserData() {

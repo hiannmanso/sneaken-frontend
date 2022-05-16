@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { useState, useContext } from 'react';
-import UserContext from '../../Context/UserContext';
+import UserContext from '../../Context/userContext';
 import logosimples from '../../Assets/logosimples.png';
 import * as s from './style';
 
