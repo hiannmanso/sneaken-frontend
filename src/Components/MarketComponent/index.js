@@ -1,6 +1,6 @@
 import * as s from './style';
 import { useState, useContext } from 'react';
-import UserContext from '../../Context/UserContext';
+import UserContext from '../../Context/userContext';
 
 export default function MarketComponent() {
 	const { displayMarket, setDisplayMarket } = useContext(UserContext);

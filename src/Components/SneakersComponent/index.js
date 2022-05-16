@@ -4,7 +4,7 @@ import SignInComponent from '../SignInComponent';
 import SignUpComponent from '../SignUpComponent';
 
 import { useState, useContext, useEffect } from 'react';
-import UserContext from '../../Context/UserContext';
+import UserContext from '../../Context/userContext';
 export default function SneakersComponent() {
 	const { allSneakers, setAllSneakers } = useContext(UserContext);
 
