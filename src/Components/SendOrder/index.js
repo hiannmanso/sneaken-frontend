@@ -19,7 +19,7 @@ export default function SendOrder(){
         },
     };
     React.useEffect(() => {
-        let promisse = axios.get('http://localhost:5000/my_sneakers', config);
+        let promisse = axios.get('https://sneaken-backend.herokuapp.com/my_sneakers', config);
         promisse.then((response) => setCart(response.data));
         promisse.catch((error) => console.log(error));
     }, [token]);
@@ -42,7 +42,7 @@ export default function SendOrder(){
                 payment: payment,
                 totalPrice: totalPrice
             }
-            let send = axios.post('http://localhost:5000/orders', sendObj, config);
+            let send = axios.post('https://sneaken-backend.herokuapp.com/orders', sendObj, config);
             send.then(() => navigate('/'));
             send.catch(()=> alert('Tente novamente mais tarde'));
         } else {
