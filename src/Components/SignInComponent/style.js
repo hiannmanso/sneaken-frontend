@@ -1,24 +1,5 @@
 import styled from 'styled-components';
 
-// export const SignInContainer = styled.div`
-// 	background-color: #000000;
-// 	display: ${(props) => props.display};
-// 	left: 25%;
-// 	font-family: 'Montserrat', sans-serif;
-// 	position: absolute;
-// 	z-index: 10;
-// 	//box-sizing: border-box;
-// 	/* background: #8c11be; */
-// 	width: 400px;
-// 	height: 500px;
-// 	flex-direction: column;
-// 	justify-content: center;
-// 	align-items: center;
-// 	background-color: #ffffff;
-// 	border-radius: 10px;
-// 	a {
-// 	}
-// `;
 export const SignInModal = styled.div`
 	width: 50%;
 	height: 500px;

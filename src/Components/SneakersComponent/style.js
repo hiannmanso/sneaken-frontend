@@ -12,7 +12,7 @@ export const HomeComponent = styled.div`
 	}
 	.sneaker {
 		/* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-			0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+		0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 		border-radius: 5px;
 		margin: 10px;
 		font-family: 'Montserrat', sans-serif;
@@ -20,10 +20,11 @@ export const HomeComponent = styled.div`
 		position: relative;
 		padding: 5px;
 		img {
+			opacity: 0.7;
 			width: 100%;
 			height: auto;
 		}
-		h1 {
+		.model {
 			padding: 6px;
 			text-align: center;
 			font-size: 20px;
@@ -43,6 +44,10 @@ export const HomeComponent = styled.div`
 		}
 	}
 	.sneaker:hover {
+		img {
+			opacity: 1;
+		}
+		cursor: pointer;
 		width: 360px;
 	}
 `;

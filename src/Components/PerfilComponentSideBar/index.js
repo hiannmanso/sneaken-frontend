@@ -11,22 +11,6 @@ export default function PerfilComponentSideBar() {
 	const { token } = useContext(UserContext);
 	const [name, setName] = useState('');
 
-	useEffect(() => {
-		axios({
-			method: 'get',
-			url: 'http://localhost:5000/sign_in',
-			headers: {
-				authorization: `Bearer ${token}`,
-			},
-		})
-			.then((response) => {
-				console.log(response);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	}, []);
-
 	return (
 		<s.PerfilComponent>
 			<div className="sidebar">

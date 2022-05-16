@@ -7,6 +7,7 @@ import PerfilUser from '../Pages/Perfil/PerfilUser';
 import PerfilOrderPage from '../Pages/Perfil/PerfilOrderPage';
 import Market from '../Pages/Market';
 import AddProducts from '../Pages/AddProducts';
+import SneakerDetails from '../Pages/SneakerDetails';
 export default function App() {
 	const [displaySignIN, setDisplaySignIN] = useState('none');
 	const [displaySignUp, setDisplaySignUp] = useState('none');
@@ -43,7 +44,10 @@ export default function App() {
 						path="/perfil/orders"
 						element={<PerfilOrderPage />}
 					/>
-					<Route path="/:nameproduct" element={''} />
+					<Route
+						path="/sneaker/:product"
+						element={<SneakerDetails />}
+					/>
 				</Routes>
 			</UserContext.Provider>
 		</BrowserRouter>
