@@ -5,7 +5,7 @@ import SignUpComponent from '../SignUpComponent';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { useState, useContext, useEffect } from 'react';
-import UserContext from '../../Context/UserContext';
+import UserContext from '../../Context/userContext';
 export default function SneakersComponent() {
 	const { allSneakers, setAllSneakers } = useContext(UserContext);
 	const navigation = useNavigate();

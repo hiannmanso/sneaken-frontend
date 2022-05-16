@@ -2,12 +2,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { useState } from 'react';
 import Home from '../Pages/Home';
-import UserContext from '../Context/UserContext';
+import UserContext from '../Context/userContext';
 import PerfilUser from '../Pages/Perfil/PerfilUser';
 import PerfilOrderPage from '../Pages/Perfil/PerfilOrderPage';
 import Market from '../Pages/Market';
 import AddProducts from '../Pages/AddProducts';
 import SneakerDetails from '../Pages/SneakerDetails';
+import Order from '../Pages/Order';
 export default function App() {
 	const [displaySignIN, setDisplaySignIN] = useState('none');
 	const [displaySignUp, setDisplaySignUp] = useState('none');
@@ -48,6 +49,9 @@ export default function App() {
 						path="/sneaker/:product"
 						element={<SneakerDetails />}
 					/>
+					<Route path="/:nameproduct" element={''} />
+					<Route path="/order" element={<Order />} />
+
 				</Routes>
 			</UserContext.Provider>
 		</BrowserRouter>

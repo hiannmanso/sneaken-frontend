@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 import * as S from './styles';
-import UserContext from '../../Context/UserContext';
+import UserContext from '../../Context/userContext';
 
 export default function ProductsForm() {
 	const [brand, setBrand] = useState('');

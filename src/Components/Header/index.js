@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
-import UserContext from '../../Context/UserContext';
+import UserContext from '../../Context/userContext';
 import * as s from './style';
 import logosimples from './../../Assets/logosimples.png';
 import SignInComponent from '../SignInComponent';
