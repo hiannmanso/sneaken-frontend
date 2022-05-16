@@ -2,12 +2,13 @@ import * as s from './style';
 import axios from 'axios';
 import SignInComponent from '../SignInComponent';
 import SignUpComponent from '../SignUpComponent';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useState, useContext, useEffect } from 'react';
 import UserContext from '../../Context/userContext';
 export default function SneakersComponent() {
 	const { allSneakers, setAllSneakers } = useContext(UserContext);
-
+	const navigation = useNavigate();
 	useEffect(() => {
 		axios({
 			method: 'get',
@@ -29,7 +30,14 @@ export default function SneakersComponent() {
 					{allSneakers ? (
 						allSneakers.map((sneaker, index) => {
 							return (
-								<div key={index} className="sneaker">
+								// <Link to={`/sneaker/${sneaker.id}`}>
+								<div
+									key={index}
+									className="sneaker"
+									onClick={() => {
+										navigation(`sneaker/${sneaker.id}`);
+									}}
+								>
 									<img
 										src={sneaker.image}
 										alt={sneaker.image}
@@ -38,6 +46,7 @@ export default function SneakersComponent() {
 									<h2>R$ {sneaker.price}</h2>
 									<ion-icon name="heart-outline"></ion-icon>
 								</div>
+								// </Link>
 							);
 						})
 					) : (
