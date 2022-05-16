@@ -18,7 +18,7 @@ export default function SignInComponent() {
 		e.preventDefault();
 		axios({
 			method: 'post',
-			url: 'http://localhost:5000/sign_in',
+			url: 'https://sneaken-backend.herokuapp.com/sign_in',
 			data: {
 				email,
 				password,

@@ -56,7 +56,7 @@ export default function ProductsForm() {
 				},
 			};
 			let promisse = axios.post(
-				'http://localhost:5000/products',
+				'https://sneaken-backend.herokuapp.com/products',
 				obj,
 				config
 			);

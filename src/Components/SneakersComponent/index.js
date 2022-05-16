@@ -12,7 +12,7 @@ export default function SneakersComponent() {
 	useEffect(() => {
 		axios({
 			method: 'get',
-			url: 'http://localhost:5000/products',
+			url: 'https://sneaken-backend.herokuapp.com/products',
 		})
 			.then((response) => {
 				console.log(response);

@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import UserContext from '../../Context/UserContext';
+import UserContext from '../../Context/userContext';
 import * as s from './style';
 export default function SneakerDetailsComponent() {
 	const { token } = useContext(UserContext);
@@ -9,10 +9,11 @@ export default function SneakerDetailsComponent() {
 	const [infoProduct, setInfoProduct] = useState('');
 	const [choice, setChoice] = useState('');
 	const [color, setColor] = useState(false);
+	const navigate = useNavigate();
 	useEffect(() => {
 		axios({
 			method: 'get',
-			url: `http://localhost:5000/products/${product}`,
+			url: `https://sneaken-backend.herokuapp.com/products/${product}`,
 		})
 			.then((response) => {
 				console.log(response);
@@ -20,13 +21,14 @@ export default function SneakerDetailsComponent() {
 			})
 			.catch((error) => {
 				console.log(error);
+				
 			});
 	}, []);
 
 	function submitProduct() {
 		axios({
 			method: 'post',
-			url: 'http://localhost:5000/my_sneakers',
+			url: 'https://sneaken-backend.herokuapp.com/my_sneakers',
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
@@ -39,9 +41,11 @@ export default function SneakerDetailsComponent() {
 		})
 			.then((response) => {
 				console.log(response);
+				navigate('/order');
 			})
 			.catch((error) => {
 				console.log(error);
+				alert('Faça login antes de adicionar itens ao carrinho');
 			});
 	}
 

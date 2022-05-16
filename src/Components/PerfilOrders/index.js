@@ -8,7 +8,7 @@ export default function PerfilOrders() {
 	useEffect(() => {
 		axios({
 			method: 'get',
-			url: 'http://localhost:5000/sign_in',
+			url: 'https://sneaken-backend.herokuapp.com/sign_in',
 			headers: {
 				authorization: `Bearer ${token}`,
 			},
